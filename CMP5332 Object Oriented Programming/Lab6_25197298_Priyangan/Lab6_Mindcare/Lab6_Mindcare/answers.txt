@@ -1,0 +1,63 @@
+CMP5332 Lab 6 - Exercise 2: MindCare Assistant
+Name:Priyangan Vasantharajan
+Student ID:25197298
+
+Write your answers below each question, in your own words (a few sentences each).
+Save this file and keep it in the project folder when you submit.
+
+
+=== Task A (Part A) ===
+
+A1. Which keyword declares that a method may throw an exception, and which
+    keyword actually throws it?
+
+Answer:
+throws is written in the method header. It tells that the method may throw 
+an exception.
+throw is written inside the method. It actually throws the exception.
+
+
+
+A2. What happens if you remove the try-catch in Main? Try it and describe
+    the message Eclipse gives you.
+
+Answer:
+The code shows a red error and does not run. Eclipse says "Unhandled exception 
+type InvalidDosageException".
+
+
+=== Step 3 ===
+
+S3. Eclipse reported an error when you caught only InvalidDosageException.
+    Which exception caused it, and why does the compiler insist on it?
+
+Answer:
+The error came from ScheduleConflictException.It is a checked exception, so 
+Java says we must catch it.
+
+
+=== Reflection questions ===
+
+R1. In your own words, what is the practical difference between a checked and
+    an unchecked exception in this project?
+
+Answer:
+A checked exception must be handled.Actually InvalidDosageException and 
+ScheduleConflictException are checked.
+An unchecked exception does not need to be handled,PatientNotFoundException is unchecked.
+
+R2. What would be thrown for an unregistered patient with an invalid dosage?
+    Why does the order of the checks matter?
+
+Answer:
+PatientNotFoundException will be thrown, according the java,the patient is checked first. 
+When an exception is 
+thrown, the method stops, so the dosage is never checked.
+The order matters because it decides which error we see.
+
+
+R3. If you wrote a single catch (Exception e) instead of separate catch
+    blocks, what would the nurse (or the calling code) lose?
+
+Answer:
+if we try that, every error goes to the same place, so we cannot know what the real problem.
